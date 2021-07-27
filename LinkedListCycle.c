@@ -6,8 +6,6 @@ struct ListNode{
     struct ListNode *next;
 };
 
-typedef struct node ListNode;
-
 
 bool hasCycle(struct ListNode *head){
 
