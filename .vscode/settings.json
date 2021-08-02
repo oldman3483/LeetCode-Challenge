@@ -14,7 +14,8 @@
         "limits": "cpp",
         "valarray": "cpp",
         "string.h": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "python.pythonPath": "D:\\python\\python.exe"
