@@ -6,7 +6,7 @@
 int lengthOfLongestSubstring(char * s){
     char *r_ptr;
     char *l_ptr;
-    int cnt=0;
+    int cnt=1;
     int max=0;
     int stone=0;
     r_ptr = s;
@@ -17,24 +17,31 @@ int lengthOfLongestSubstring(char * s){
         l_ptr = s + stone;
         for(int j=0;j<i;j++)
         {
-            if (*r_ptr == *l_ptr)
+            printf("\n%c, %c", r_ptr[i], l_ptr[j]);
+
+            if (r_ptr[i] == l_ptr[j])
                 stone = j;
                 cnt = 0;
                 r_ptr = l_ptr;
+                break;
             l_ptr++;
+            printf("\nl_ptr pos is %c", l_ptr[j]);
         }
         if (cnt>max)
             max = cnt;
         r_ptr++;
         cnt++;
-        max++;
+        printf("\n%d", cnt);
+        printf("\n!!!!!r_ptr pos is %c", r_ptr[i]);
+
+
     }
     
     
    
-   printf("\n%d", s);
-   printf("\n");
-   printf("%d", r_ptr+1);
+   //printf("\n%d", s);
+   //printf("\n");
+   //printf("%d", r_ptr+1);
    return max;
 }
 
