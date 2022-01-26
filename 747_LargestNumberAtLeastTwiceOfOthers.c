@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// the leetcode don't provide sufficient space 
+// to use hash table to record the index of max data
+// therefore the method can't work because of space 
+// not the algorithm.
 
 int dominantIndex(int* nums, int numsSize){
     int *num_index = malloc(100*sizeof(int));
