@@ -7,6 +7,7 @@ int dominantIndex(int* nums, int numsSize){
     int max=0;
     int max2=0;
     int out=0;
+    int max_index = -1;
     int num_init = 0;
     if (numsSize == 1)
         return 0;
@@ -19,6 +20,7 @@ int dominantIndex(int* nums, int numsSize){
         num_init = nums[i];
         if (*(nums+i) > max)
         {
+            max_index = i;
             max2 = max;
             max = nums[i];
             //printf("check \n");
@@ -32,7 +34,7 @@ int dominantIndex(int* nums, int numsSize){
     if (max >= max2*2)
     {
         out = num_index[max];
-        return out;
+        return max_index;
     }
     return -1;
 }
