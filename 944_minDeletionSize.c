@@ -35,4 +35,6 @@ int main(void)
     out = minDeletionSize(strs, 3);
     printf("%d\n", out);
 
+    return 0;
+
 }
