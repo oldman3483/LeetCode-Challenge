@@ -1,16 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-static inline void
-__swap(int *a, int v, int m)
+static inline void __swap(int *a, int v, int m)
 {       
     int x = a[m];
     a[m] = a[v];
     a[v] = x;
 }
 
-void
-nextPermutation(int *nums, int numsSize)
+void nextPermutation(int *nums, int numsSize)
 {
     if (numsSize <= 1) {
         return;
@@ -28,6 +26,7 @@ nextPermutation(int *nums, int numsSize)
             break;
         }
     }
+    
 
     // if there is a number before descending part, swap it with just larger
     // number in descending part to get next larger number of permutation
@@ -39,7 +38,13 @@ nextPermutation(int *nums, int numsSize)
             }
         }
         __swap(nums, firstDesc - 1, justHigherNum);
+        printf("%d\n", justHigherNum);
+
     }
+    printf("%d\n", firstDesc);
+
+
+
 
     // no matter we increase number before descending part or not, we need to
     // reverse descending part to get the next permutation
@@ -53,6 +58,13 @@ nextPermutation(int *nums, int numsSize)
 
 int main(void)
 {
+    int nums[3] = {3, 2, 1};
+    nextPermutation(nums, 3);
+    for(int i=0; i<3;i++)
+    {
+        printf("%d", *(nums+i));
+
+    }
     
     return 0;
 }
